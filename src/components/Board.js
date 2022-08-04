@@ -4,8 +4,8 @@ import BoxGame from "./BoxGame";
 
 function Board() {
   return (
-    <Container className="text-center">
-      <Row>
+    <Container className="vertical-center d-flex align-items-center text-center">
+      <Row className="mx-6 d-flex mx-auto justify-content-center">
         {
           //CODIGO JS
           //ARREGLO DE (9 elementos)

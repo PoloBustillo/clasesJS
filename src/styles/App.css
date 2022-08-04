@@ -24,6 +24,15 @@
   color: rgb(246, 55, 55);
 }
 
+.container-table {
+  display: table;
+}
+
+.vertical-center-row {
+  display: table-cell;
+  vertical-align: middle;
+}
+
 .App-link {
   color: #61dafb;
 }

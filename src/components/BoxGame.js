@@ -4,10 +4,10 @@ import { Col } from "react-bootstrap";
 function BoxGame() {
   return (
     <Col
-      className="border d-flex align-items-center col-4"
-      style={{ height: "50px" }}
+      className="border col-4"
+      style={{ height: "50px", position: "relative" }}
     >
-      <span className="d-flex mx-auto justify-content-center">1</span>
+      <span className="vertical-center">1</span>
     </Col>
   );
 }

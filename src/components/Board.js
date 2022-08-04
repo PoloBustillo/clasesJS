@@ -4,8 +4,17 @@ import BoxGame from "./BoxGame";
 
 function Board() {
   return (
-    <Container className="vertical-center d-flex align-items-center text-center">
-      <Row className="mx-6 d-flex mx-auto justify-content-center">
+    <Container className="container-vertical text-center">
+      <Row className="mx-auto" style={{ width: "90%" }}>
+        <label>Jugador 1:</label>
+        <input></input>
+        <label>Jugador 2:</label>
+        <input></input>
+      </Row>
+      <Row className="vertical-center">
+        <div>
+          <h3>Turno: Jugador 1</h3>
+        </div>
         {
           //CODIGO JS
           //ARREGLO DE (9 elementos)

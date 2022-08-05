@@ -1,14 +1,15 @@
 import React from "react";
 import { Col } from "react-bootstrap";
+import { Circle, XLg } from "react-bootstrap-icons";
 
 function BoxGame(props) {
   //function
   function addSelection() {
-    console.log("CLICK");
+    console.log(props.index);
   }
   //arrow function
   let addSelection2 = () => {
-    console.log("CLICK 2");
+    console.log(props.index);
   };
 
   return (
@@ -17,9 +18,14 @@ function BoxGame(props) {
       className="border col-4 border-pink box-container"
       style={{ height: "80px" }} //TRATAR DE EVITAR
     >
-      <div className="center">
-        <span className="purple">{props.selection}</span>
-        <div className="purple">{props.index}</div>
+      <div className="center-box">
+        {props.selection === "O" ? (
+          <Circle color="purple"></Circle>
+        ) : props.selection === "X" ? (
+          <XLg color="purple"></XLg>
+        ) : (
+          <span></span>
+        )}
       </div>
     </Col>
   );

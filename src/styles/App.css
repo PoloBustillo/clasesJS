@@ -3,7 +3,9 @@
     height: 50px !important;
   }
 }
-
+body{
+  background-color: whitesmoke;
+}
 .box-container:nth-child(7),
 .box-container:nth-child(8),
 .box-container:nth-child(9){
@@ -36,16 +38,27 @@
 }
 
 .board-container {
-  height: 100vh;
+  height: 65vh;
+  position: relative;
+}
+.form-container {
+  height: 35vh;
   position: relative;
 }
 .yellow{
   color:yellow
 }
-.center{
+.center-box {
   margin: 0;
   position: absolute;
   top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.center{
+  margin: 0;
+  position: absolute;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -88,14 +101,7 @@
 .container-vertical{
   height: 100vh;
 }
-.vertical-center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
+
 
 .App-link {
   color: #61dafb;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Container } from "react-bootstrap";
+import { Row, Container, Button, Form } from "react-bootstrap";
 import BoxGame from "./BoxGame";
 
 function Board() {

@@ -1,3 +1,37 @@
+@media (max-width: 500px) {
+  .box-container {
+    height: 50px !important;
+  }
+}
+
+.box-container {
+  position: relative;
+}
+
+.purple{
+  color:purple !important
+}
+
+.board-container {
+  height: 100vh;
+  position: relative;
+}
+.yellow{
+  color:yellow
+}
+.center{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.border-pink{
+  border-color: pink !important;
+  border-width: 2px !important;
+}
+
+
 .App {
   text-align: center;
 }

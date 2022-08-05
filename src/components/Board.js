@@ -1,9 +1,10 @@
 import React from "react";
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Container } from "react-bootstrap";
 import BoxGame from "./BoxGame";
 
 function Board() {
   return (
+<<<<<<< Updated upstream
     <Container className="container-vertical text-center">
       <Row className="mx-auto" style={{ width: "90%" }}>
         <label>Jugador 1:</label>
@@ -22,6 +23,19 @@ function Board() {
             return <BoxGame></BoxGame>;
           })
         }
+=======
+    <Container className="text-center board-container">
+      <Row className="center">
+        <BoxGame></BoxGame>
+        <BoxGame></BoxGame>
+        <BoxGame></BoxGame>
+        <BoxGame></BoxGame>
+        <BoxGame></BoxGame>
+        <BoxGame></BoxGame>
+        <BoxGame></BoxGame>
+        <BoxGame></BoxGame>
+        <BoxGame></BoxGame>
+>>>>>>> Stashed changes
       </Row>
     </Container>
   );

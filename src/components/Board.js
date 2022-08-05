@@ -1,10 +1,11 @@
 import React from "react";
-import { Row, Container, Button, Form } from "react-bootstrap";
+import { Row, Container } from "react-bootstrap";
+import { Circle, XLg } from "react-bootstrap-icons";
 import BoxGame from "./BoxGame";
 
 function Board() {
   const stateArray = ["X", "O", "O", "X", "X", "O", null, "X", "O"];
-
+  let player = "X";
   //Crear nuevo arreglo usando el anterior
   let newStateArray = stateArray.map((value, position) => {
     return <BoxGame selection={value} index={position}></BoxGame>;
@@ -15,7 +16,17 @@ function Board() {
 
   return (
     <Container className="text-center board-container">
-      <Row className="center">{newStateArray}</Row>
+      <Row className="center">
+        {newStateArray}
+        <span className="mt-5">
+          Turno:{" "}
+          {player === "O" ? (
+            <Circle color="purple"></Circle>
+          ) : (
+            <XLg color="purple"></XLg>
+          )}
+        </span>
+      </Row>
     </Container>
   );
 }

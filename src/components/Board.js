@@ -3,19 +3,19 @@ import { Row, Container } from "react-bootstrap";
 import BoxGame from "./BoxGame";
 
 function Board() {
+  const stateArray = ["X", "O", "O", "X", "X", "O", null, "X", "O"];
+
+  //Crear nuevo arreglo usando el anterior
+  let newStateArray = stateArray.map((value, position) => {
+    return <BoxGame selection={value} index={position}></BoxGame>;
+  });
+
+  //Dibujar nuevo arreglo en consola
+  console.log(newStateArray);
+
   return (
     <Container className="text-center board-container">
-      <Row className="center">
-        <BoxGame></BoxGame>
-        <BoxGame></BoxGame>
-        <BoxGame></BoxGame>
-        <BoxGame></BoxGame>
-        <BoxGame></BoxGame>
-        <BoxGame></BoxGame>
-        <BoxGame></BoxGame>
-        <BoxGame></BoxGame>
-        <BoxGame></BoxGame>
-      </Row>
+      <Row className="center">{newStateArray}</Row>
     </Container>
   );
 }

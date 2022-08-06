@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Container } from "react-bootstrap";
 import { Circle, XLg } from "react-bootstrap-icons";
 import BoxGame from "./BoxGame";
 
 function Board() {
-  const stateArray = ["X", "O", "O", "X", "X", "O", null, "X", "O"];
-  let player = "X";
+  const [gameState, setGameState] = useState([
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+  ]);
+
+  let currentPlayer = "O";
   //Crear nuevo arreglo usando el anterior
-  let newStateArray = stateArray.map((value, position) => {
-    return <BoxGame selection={value} index={position}></BoxGame>;
+  let newStateArray = gameState.map((value, position) => {
+    return (
+      <BoxGame key={position} selection={value} index={position}></BoxGame>
+    );
   });
 
   //Dibujar nuevo arreglo en consola
@@ -20,10 +33,12 @@ function Board() {
         {newStateArray}
         <span className="mt-5">
           Turno:{" "}
-          {player === "O" ? (
+          {currentPlayer === "O" ? (
             <Circle color="purple"></Circle>
-          ) : (
+          ) : currentPlayer === "X" ? (
             <XLg color="purple"></XLg>
+          ) : (
+            <span></span>
           )}
         </span>
       </Row>

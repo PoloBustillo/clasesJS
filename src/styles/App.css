@@ -65,6 +65,10 @@ body{
   border-width: 2px !important;
 }
 
+.border-green {
+  background-color: pink !important;
+  border-width: 2px !important;
+}
 
 .App {
   text-align: center;

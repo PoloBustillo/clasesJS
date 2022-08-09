@@ -3,26 +3,32 @@ import { Col } from "react-bootstrap";
 import { Circle, XLg } from "react-bootstrap-icons";
 
 function BoxGame(props) {
-  //function
-  function addSelection() {
-    console.log(props.index);
-  }
-  //arrow function
-  let addSelection2 = () => {
-    console.log(props.index);
-  };
-
   return (
     <Col
-      onClick={addSelection2}
-      className="border col-4 border-pink box-container"
+      onClick={() => {
+        console.log(props.index);
+        props.modifyGame(props.index);
+      }}
+      className={
+        props.isWinnerBox
+          ? "border col-4 border-green box-container"
+          : "border col-4 border-pink box-container"
+      }
       style={{ height: "80px" }} //TRATAR DE EVITAR
     >
       <div className="center-box">
         {props.selection === "O" ? (
-          <Circle color="purple"></Circle>
+          <Circle
+            fontWeight={"bold"}
+            size={props.isWinnerBox ? 24 : 16}
+            color={props.isWinnerBox ? "green" : "purple"}
+          ></Circle>
         ) : props.selection === "X" ? (
-          <XLg color="purple"></XLg>
+          <XLg
+            fontWeight={"bold"}
+            size={props.isWinnerBox ? 24 : 16}
+            color={props.isWinnerBox ? "green" : "purple"}
+          ></XLg>
         ) : (
           <span></span>
         )}

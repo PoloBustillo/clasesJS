@@ -36,9 +36,7 @@ function App() {
       <div className="titulo">MEMORAMA</div>
       <BoardMemorama className="my-4"></BoardMemorama>
       <CardsMemorama imagen={response}></CardsMemorama>
-      
     </Container>
-
   );
 }
 

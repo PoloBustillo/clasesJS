@@ -20,4 +20,4 @@ function boxMemorama() {
    ); 
 }
 
-export default boxMemorama();
+export default boxMemorama;

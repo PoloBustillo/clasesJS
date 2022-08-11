@@ -5,9 +5,12 @@ import { Container } from "react-bootstrap";
 import "./styles/App.css";
 import CardsMemorama from "./components/CardsMemorama";
 
+
 function App() {
+  const [searchTerm, setSearchTerm] = useState("gatitos");
+  console.log(searchTerm)
   const URL =
-    "https://api.unsplash.com/search/photos?client_id=GS9NJjBSqA2w3ak6AOHAIYWDNDCcjQQwPtLNtUNswqY&query=kitten&color=black_and_white";
+    "https://api.unsplash.com/search/photos?client_id=GS9NJjBSqA2w3ak6AOHAIYWDNDCcjQQwPtLNtUNswqY&query="+searchTerm;
 
   const [response, setResponse] = useState([]);
 
@@ -29,12 +32,12 @@ function App() {
       console.log(urlArray);
     };
     getPhotosData();
-  }, []);
+  }, [searchTerm]);
 
   return (
     <Container>
       <div className="titulo">MEMORAMA</div>
-      <BoardMemorama className="my-4"></BoardMemorama>
+      <BoardMemorama change={setSearchTerm} className="my-4"></BoardMemorama>
       <CardsMemorama imagen={response}></CardsMemorama>
     </Container>
   );

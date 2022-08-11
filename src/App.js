@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import BoardMemorama from "./components/BoardMemorama";
+import { Container } from "react-bootstrap";
+import "./styles/App.css";
+import CardsMemorama from "./components/CardsMemorama";
 
 function App() {
   const URL =
@@ -28,19 +32,11 @@ function App() {
   }, []);
 
   return (
-    <>
-      MEMORAMA
-      <img src={response[0]}></img>
-      <img src={response[1]}></img>
-      <img src={response[2]}></img>
-      <img src={response[3]}></img>
-      <img src={response[4]}></img>
-      <img src={response[5]}></img>
-      <img src={response[6]}></img>
-      <img src={response[7]}></img>
-      <img src={response[8]}></img>
-      <img src={response[9]}></img>
-    </>
+    <Container>
+      <div className="titulo">MEMORAMA</div>
+      <BoardMemorama className="my-4"></BoardMemorama>
+      <CardsMemorama imagen={response}></CardsMemorama>
+    </Container>
   );
 }
 

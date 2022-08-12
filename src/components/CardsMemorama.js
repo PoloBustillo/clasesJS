@@ -10,12 +10,12 @@ function createCol(url) {
       <div class="flip-card-inner">
         <div className="flip-card-front">
           <h1>?</h1>
-           </div>
+        </div>
         <div className="flip-card-back">
           <Image src={url} className="image"></Image>
         </div>
       </div>
-    </Col >
+    </Col>
   );
 }
 

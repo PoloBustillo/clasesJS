@@ -5,12 +5,12 @@ import { Container } from "react-bootstrap";
 import "./styles/App.css";
 import CardsMemorama from "./components/CardsMemorama";
 
-
 function App() {
   const [searchTerm, setSearchTerm] = useState("gatitos");
-  console.log(searchTerm)
+  console.log(searchTerm);
   const URL =
-    "https://api.unsplash.com/search/photos?client_id=GS9NJjBSqA2w3ak6AOHAIYWDNDCcjQQwPtLNtUNswqY&query="+searchTerm;
+    "https://api.unsplash.com/search/photos?client_id=GS9NJjBSqA2w3ak6AOHAIYWDNDCcjQQwPtLNtUNswqY&query=" +
+    searchTerm;
 
   const [response, setResponse] = useState([]);
 

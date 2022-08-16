@@ -1,4 +1,4 @@
-import { axios } from "axios";
+import axios from "axios";
 /**
  *
  * @returns regresa un numero aleatorio de -1 a 1
@@ -7,10 +7,11 @@ export function random() {
   return 0.5 - Math.random();
 }
 
-export let getPhotosData = async (setResponse, searchTerm) => {
+export let getPhotosData = async (searchTerm) => {
   const URL =
-  "https://api.unsplash.com/search/photos?client_id=GS9NJjBSqA2w3ak6AOHAIYWDNDCcjQQwPtLNtUNswqY&query=" +
-  searchTerm;
+    "https://api.unsplash.com/search/photos?client_id=GS9NJjBSqA2w3ak6AOHAIYWDNDCcjQQwPtLNtUNswqY&query=" +
+    searchTerm;
+
   let photosResponse = await axios({
     method: "get",
     url: URL,
@@ -21,5 +22,6 @@ export let getPhotosData = async (setResponse, searchTerm) => {
   });
   let newArrayConcat = urlArray.concat(urlArray);
   let newArraySort = newArrayConcat.sort(random);
-  setResponse(newArraySort);
+
+  return newArraySort;
 };

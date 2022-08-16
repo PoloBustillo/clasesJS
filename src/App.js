@@ -1,23 +1,21 @@
 import React, { useEffect, useState } from "react";
+import CardsMemorama from "./components/CardsMemorama";
 import BoardMemorama from "./components/BoardMemorama";
 import { Container } from "react-bootstrap";
-import "./styles/App.css";
-import CardsMemorama from "./components/CardsMemorama";
 import { getPhotosData } from "./utilities/helpers";
-
+import "./styles/App.css";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("gatitos");
   const [response, setResponse] = useState([]); //arreglo url ya formateadas
 
   useEffect(() => {
-    //llamadas a servicios
-    //info de mi perfil
-    //info de mis blogs
-    //imagenes...
-    
-    getPhotosData(setResponse, searchTerm);
-    console.log(response);
+    (async () => {
+      let arrayUrls = await getPhotosData(searchTerm);
+      setResponse(arrayUrls);
+      //API
+      //ACTUALIZAR OTROS ESTADOS
+    })();
   }, [searchTerm]);
 
   return (

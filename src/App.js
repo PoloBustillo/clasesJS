@@ -4,15 +4,14 @@ import BoardMemorama from "./components/BoardMemorama";
 import { Container } from "react-bootstrap";
 import "./styles/App.css";
 import CardsMemorama from "./components/CardsMemorama";
+import { random } from "./utilities/helpers";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("gatitos");
-  console.log(searchTerm);
   const URL =
     "https://api.unsplash.com/search/photos?client_id=GS9NJjBSqA2w3ak6AOHAIYWDNDCcjQQwPtLNtUNswqY&query=" +
     searchTerm;
-
-  const [response, setResponse] = useState([]);
+  const [response, setResponse] = useState([]); //arreglo url ya formateadas
 
   useEffect(() => {
     //llamadas a servicios
@@ -28,8 +27,9 @@ function App() {
       let urlArray = photosResponse.data.results.map((photoData) => {
         return photoData.urls.thumb;
       });
-      setResponse(urlArray);
-      console.log(urlArray);
+      let newArrayConcat = urlArray.concat(urlArray);
+      let newArraySort = newArrayConcat.sort(random);
+      setResponse(newArraySort);
     };
     getPhotosData();
   }, [searchTerm]);
@@ -38,7 +38,7 @@ function App() {
     <Container>
       <div className="titulo">MEMORAMA</div>
       <BoardMemorama change={setSearchTerm} className="my-4"></BoardMemorama>
-      <CardsMemorama imagen={response}></CardsMemorama>
+      <CardsMemorama urls={response}></CardsMemorama>
     </Container>
   );
 }

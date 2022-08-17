@@ -15,9 +15,14 @@ function CardsMemorama({ urls }) {
     <Container className="text-center board-container">
       <Row className="center">
         {urls.map((url, index) => {
-          return <Box click={setDescubSinVerif}
-            indice={index}
-            imagen={url}></Box>;
+          return (
+            <Box
+              showArray={descubSinVerif}
+              click={setDescubSinVerif}
+              indice={index}
+              imagen={url}
+            ></Box>
+          );
         })}
       </Row>
     </Container>

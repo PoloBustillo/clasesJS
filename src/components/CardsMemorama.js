@@ -11,6 +11,13 @@ function CardsMemorama({ urls }) {
   const [descubSinVerif, setDescubSinVerif] = useState([]);
   const [verificadas, setVerificadas] = useState([]);
 
+function verify() {
+  if (urls[descubSinVerif[0]] === urls[descubSinVerif[1]]) {
+    console.log('son iguales');
+  }else{
+    console.log('son diferentes');
+  }
+}
   return (
     <Container className="text-center board-container">
       <Row className="center">
@@ -21,11 +28,13 @@ function CardsMemorama({ urls }) {
               click={setDescubSinVerif}
               indice={index}
               imagen={url}
+              verify={verify}
             ></Box>
           );
         })}
       </Row>
     </Container>
+    
   );
 }
 

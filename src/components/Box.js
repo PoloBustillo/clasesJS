@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Image } from "react-bootstrap";
 
-function Box({ imagen, click, indice, showArray }) {
+function Box({ imagen, click, indice, showArray, verify }) {
   const [active, setActive] = useState(false);
+  useEffect(() => {
+    if(showArray.length === 2){
+      verify();
+    }
+  }, [showArray]);
+
   return (
     <Col
       onClick={(evento) => {
@@ -12,6 +18,8 @@ function Box({ imagen, click, indice, showArray }) {
           setActive(true);
           click(newArray);
           console.log(indice);
+        }else{
+          verify();
         }
         //sino es mayor o igual que 2, entonces verifica
       }}

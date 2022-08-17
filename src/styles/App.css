@@ -79,7 +79,7 @@
   box-shadow: 2px 2px 10px 0 rgba(9, 58, 97, 0.7);
 }
 
-.flip-card:hover .flip-card-inner {
+.active .flip-card-inner {
   transform: rotateY(180deg);
 }
 

@@ -1,27 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { Col, Image } from "react-bootstrap";
 
-function Box({ imagen, click, indice, showArray, verify }) {
+function Box({ imagen, click, indice, showArray, verifiedArray }) {
   const [active, setActive] = useState(false);
-  useEffect(() => {
-    if(showArray.length === 2){
-      verify();
+
+  const activeOrDisable = () => {
+    if (showArray.includes(indice)) {
+      setActive(true);
+    } else {
+      setActive(false);
     }
-  }, [showArray]);
+  };
+  useEffect(activeOrDisable, [showArray]);
 
   return (
     <Col
-      onClick={(evento) => {
+      onClick={() => {
         let newArray = [...showArray];
         if (newArray.length < 2) {
           newArray.push(indice);
-          setActive(true);
           click(newArray);
-          console.log(indice);
-        }else{
-          verify();
         }
-        //sino es mayor o igual que 2, entonces verifica
       }}
       className="col-4 col-sm-3 image-container flip-card"
     >

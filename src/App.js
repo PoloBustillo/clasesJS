@@ -11,10 +11,10 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      let arrayUrls = await getPhotosData(searchTerm);
-      setResponse(arrayUrls);
       //API
       //ACTUALIZAR OTROS ESTADOS
+      let arrayUrls = await getPhotosData(searchTerm);
+      setResponse(arrayUrls);
     })();
   }, [searchTerm]);
 

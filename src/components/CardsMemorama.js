@@ -38,7 +38,9 @@ function CardsMemorama({ urls }) {
         {urls.map((url, index) => {
           return (
             <Box
-              showArray={toBeCompare}
+            verificadas={verificadas} 
+            setVerificadas={setVerificadas}  
+            showArray={toBeCompare}
               click={setToBeCompare}
               indice={index}
               imagen={url}

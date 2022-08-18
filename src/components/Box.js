@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Col, Image } from "react-bootstrap";
 
-function Box({ imagen, click, indice, showArray, verifiedArray }) {
-  const [active, setActive] = useState(false);
+function Box({ imagen, click, indice, showArray, verificadas, setVerificadas }) {
+    const [active, setActive] = useState(false);
 
   const activeOrDisable = () => {
     if (showArray.includes(indice)) {

@@ -23,7 +23,10 @@ function CardsMemorama({ urls }) {
       //urls(20) : ['http://kakskdas'......]
       //url[10] === url[15]
       if (urls[toBeCompare[0]] === urls[toBeCompare[1]]) {
-        console.log("son iguales");
+        verificadas.push(toBeCompare[0]); verificadas.push(toBeCompare[1]);console.log("son iguales");
+        setTimeout(() => {
+          setToBeCompare([]);
+        }, 1000);
       } else {
         //espero un 1000ms y limpio arreglo toBeCompare
         setTimeout(() => {

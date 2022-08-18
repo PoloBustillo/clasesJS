@@ -5,7 +5,7 @@ function Box({ imagen, click, indice, showArray, verificadas, setVerificadas }) 
     const [active, setActive] = useState(false);
 
   const activeOrDisable = () => {
-    if (showArray.includes(indice)) {
+    if (showArray.includes(indice)||verificadas.includes(indice)) {
       setActive(true);
     } else {
       setActive(false);

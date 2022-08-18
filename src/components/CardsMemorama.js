@@ -23,15 +23,18 @@ function CardsMemorama({ urls }) {
       //urls(20) : ['http://kakskdas'......]
       //url[10] === url[15]
       if (urls[toBeCompare[0]] === urls[toBeCompare[1]]) {
-        verificadas.push(toBeCompare[0]); verificadas.push(toBeCompare[1]);console.log("son iguales");
-        setTimeout(() => {
-          setToBeCompare([]);
-        }, 1000);
+        let newVerificadas = [...verificadas];
+        newVerificadas.push(toBeCompare[0]);
+        newVerificadas.push(toBeCompare[1]);
+        setVerificadas(newVerificadas);
+        setToBeCompare([]);
+
+        console.log("son iguales");
       } else {
         //espero un 1000ms y limpio arreglo toBeCompare
         setTimeout(() => {
           setToBeCompare([]);
-        }, 1000);
+        }, 500);
       }
     }
   }
@@ -41,9 +44,8 @@ function CardsMemorama({ urls }) {
         {urls.map((url, index) => {
           return (
             <Box
-            verificadas={verificadas} 
-            setVerificadas={setVerificadas}  
-            showArray={toBeCompare}
+              verificadas={verificadas}
+              showArray={toBeCompare}
               click={setToBeCompare}
               indice={index}
               imagen={url}

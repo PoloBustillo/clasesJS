@@ -2,7 +2,7 @@ import { Col } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 
-function BoardMemorama({ change }) {
+function BoardMemorama({ change, resetGame }) {
   return (
     <Row className="my-4">
       <Form.Label column="lg" lg={2}>
@@ -12,7 +12,10 @@ function BoardMemorama({ change }) {
         <Form.Control
           onChange={(event) => {
             change(event.target.value);
-          }}
+resetGame()
+
+
+          }} 
           size="lg"
           type="text"
           placeholder="Elige"

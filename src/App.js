@@ -9,6 +9,10 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("gatitos");
   const [response, setResponse] = useState([]); //arreglo url ya formateadas
 
+  function resetGame() {
+console.log("dgjnjkgn")
+     }
+
   useEffect(() => {
     (async () => {
       //API
@@ -21,9 +25,9 @@ function App() {
   return (
     <Container>
       <div className="titulo">MEMORAMA</div>
-      <BoardMemorama change={setSearchTerm} className="my-4"></BoardMemorama>
+      <BoardMemorama resetGame={resetGame} change={setSearchTerm} className="my-4"></BoardMemorama>
       <CardsMemorama urls={response}></CardsMemorama>
-    </Container>
+        </Container>
   );
 }
 

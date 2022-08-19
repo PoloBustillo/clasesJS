@@ -65,6 +65,7 @@ function CardsMemorama({ urls }) {
       </Row>
       {mostrarAlerta === true ? <span>WIN</span>: null
         }
+        
     </Container>
   );
 }

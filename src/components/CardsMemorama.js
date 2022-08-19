@@ -10,6 +10,7 @@ import Box from "./Box";
 function CardsMemorama({ urls }) {
   const [toBeCompare, setToBeCompare] = useState([]);
   const [verificadas, setVerificadas] = useState([]);
+  const [mostrarAlerta, setMostrarModal] = useState(false);
 
   //Cada vez que cambie mi arreglo por comparar,
   //ejecuto lo que esta adentro del useEffect
@@ -38,6 +39,15 @@ function CardsMemorama({ urls }) {
       }
     }
   }
+  const mostrarModal = () => {
+    if (verificadas.length == 20) {
+      setMostrarModal(true);
+      console.log('AQUI TOY')
+    } else {
+      setMostrarModal(false);
+    }
+  };
+  useEffect(mostrarModal, [verificadas]);
   return (
     <Container className="text-center board-container">
       <Row className="center">
@@ -53,6 +63,8 @@ function CardsMemorama({ urls }) {
           );
         })}
       </Row>
+      {mostrarAlerta === true ? <span>WIN</span>: null
+        }
     </Container>
   );
 }

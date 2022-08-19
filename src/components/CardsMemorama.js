@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Toast, ToastContainer } from "react-bootstrap";
 import Box from "./Box";
 
 /**
@@ -37,9 +37,27 @@ function CardsMemorama({ urls, verificadas, toBeCompare, setToBeCompare}) {
           );
         })}
       </Row>
-      {mostrarAlerta === true ? <span>WIN</span>: null
-        }
-
+      {
+      mostrarAlerta === true ?<ToastContainer position={'top-center'}> <Toast
+      className="d-inline-block m-1"
+      bg={'Warning'.toLowerCase()}
+      key={1}
+      
+    >
+      <Toast.Header>
+        <img
+          src="holder.js/20x20?text=%20"
+          className="rounded me-2"
+          alt=""
+        />
+        <strong className="me-auto">Bootstrap</strong>
+        <small>11 mins ago</small>
+      </Toast.Header>
+      <Toast.Body className={'Warning' === 'Dark' && 'text-white'}>
+        Felicidades haz ganado!!!.
+      </Toast.Body>
+    </Toast></ToastContainer>: null
+      }
     </Container>
   );
 }

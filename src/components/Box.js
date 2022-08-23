@@ -3,7 +3,7 @@ import { Col, Image } from "react-bootstrap";
 
 function Box({ imagen, click, indice, showArray, verificadas }) {
   const [active, setActive] = useState(false);
-const [estiloGris, setEstiloGris] = useState(false);
+  const [estiloGris, setEstiloGris] = useState(false);
 
   const activeOrDisable = () => {
     if (showArray.includes(indice) || verificadas.includes(indice)) {
@@ -11,24 +11,24 @@ const [estiloGris, setEstiloGris] = useState(false);
     } else {
       setActive(false);
     }
-  }
+  };
   useEffect(activeOrDisable, [showArray]);
-  
+
   const convertirGris = () => {
     if (verificadas.includes(indice)) {
       setEstiloGris(true);
     } else {
       setEstiloGris(false);
     }
-  }
-  ;
+  };
   useEffect(convertirGris, [verificadas]);
 
   return (
     <Col
       onClick={() => {
         let newArray = [...showArray];
-        if (newArray.length < 20) {
+        if (newArray.length < 2 && !newArray.includes(indice)) {
+          console.log("llll");
           newArray.push(indice);
           click(newArray);
         }
@@ -40,7 +40,10 @@ const [estiloGris, setEstiloGris] = useState(false);
           <h1>?</h1>
         </div>
         <div className="flip-card-back">
-          <Image src={imagen} className= {estiloGris ? "image estiloGris" : "image"}/>
+          <Image
+            src={imagen}
+            className={estiloGris ? "image estiloGris" : "image"}
+          />
         </div>
       </div>
     </Col>

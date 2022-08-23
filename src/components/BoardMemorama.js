@@ -12,10 +12,8 @@ function BoardMemorama({ change, resetGame }) {
         <Form.Control
           onChange={(event) => {
             change(event.target.value);
-resetGame()
-
-
-          }} 
+            resetGame();
+          }}
           size="lg"
           type="text"
           placeholder="Elige"

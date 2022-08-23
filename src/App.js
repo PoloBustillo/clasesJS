@@ -8,14 +8,14 @@ import "./styles/App.css";
 function App() {
   const [searchTerm, setSearchTerm] = useState("gatitos");
   const [response, setResponse] = useState([]); //arreglo url ya formateadas
-   const [toBeCompare, setToBeCompare] = useState([]);
+  const [toBeCompare, setToBeCompare] = useState([]);
   const [verificadas, setVerificadas] = useState([]);
 
   function resetGame() {
-    setVerificadas([]) 
-    setToBeCompare([]) 
-console.log("cartas")
-     }
+    setVerificadas([]);
+    setToBeCompare([]);
+    console.log("cartas");
+  }
 
   useEffect(verify, [toBeCompare]); //arreglo de dependencias
 
@@ -55,12 +55,18 @@ console.log("cartas")
   return (
     <Container>
       <div className="titulo">MEMORAMA</div>
-      <BoardMemorama resetGame={resetGame} change={setSearchTerm} className="my-4"></BoardMemorama>
-      <CardsMemorama verificadas={verificadas}
-      toBeCompare={toBeCompare}
-      urls={response}
-      setToBeCompare={setToBeCompare}></CardsMemorama>
-        </Container>
+      <BoardMemorama
+        resetGame={resetGame}
+        change={setSearchTerm}
+        className="my-4"
+      ></BoardMemorama>
+      <CardsMemorama
+        verificadas={verificadas}
+        toBeCompare={toBeCompare}
+        urls={response}
+        setToBeCompare={setToBeCompare}
+      ></CardsMemorama>
+    </Container>
   );
 }
 

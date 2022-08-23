@@ -71,6 +71,7 @@
 }
 
 .flip-card {
+  cursor: pointer;
   background-color: transparent;
   perspective: 1000px;
 }

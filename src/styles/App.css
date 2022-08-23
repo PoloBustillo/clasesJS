@@ -28,6 +28,12 @@
   color: #000000;
 }
 
+.estiloGris {
+-webkit-filter: grayscale(100%);
+  /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
